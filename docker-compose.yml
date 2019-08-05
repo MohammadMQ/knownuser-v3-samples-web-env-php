@@ -1,0 +1,21 @@
+#NOTES 
+#This yml file related to user story 4587 (Knownuser-v3-samples Web Env Dev. image for PHP 5 and 7)
+
+#HOW TO USE THIS YML FILE
+# Stand in the same directory as docker-compose.yml file using command prompt
+# Run docker-compose build and then docker-compose up
+# Go to browser and type: 127.0.0.1:8000
+
+version: '3.3'
+services: #what services will be provided
+
+  web-server: 
+    build:
+      context: .
+      dockerfile: docker-php7.dockerfile
+    container_name: php7 
+
+    volumes:
+      - ./php7.0:/var/www/html/
+      ports: 
+      - 8000:80
